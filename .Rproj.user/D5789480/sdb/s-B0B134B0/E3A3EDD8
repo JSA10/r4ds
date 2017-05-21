@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#r4ds programming\n\n\n# Pipes -------------------------------------------------------------------\n\n\n\n\n\n# Functions ---------------------------------------------------------------\n\n\n# readability tips:\n# - generally function names should be verbs, arguments are nouns\n# - remember Functions are for HUMANS + computers\n# - use consistent naming style and argument order: e.g.\n# -- e.g. snake_case\n# -- consistent prefix better than sufix for family of function -> auto complete\n# ---- e.g. str_...\n#\n# shortcut to create code headers (Cmd/Ctrl + Shift + R)\n#\n\n\n# Conditions --------------------------------------------------------------\n\n# if allows you to conditionally execute code\nif (condition) {\n    #execute when true\n} else {\n    #execute when false\n}\n\n# need backticks for help\n?`if`  #includes other control flow statements\n\n\"\"\"\n*Standard return rule: a function returns the last value that it computed.\nHere that is either one of the two branches of the if statement.\n\"\"\"\n\n# 19.4.1 Conditions\n\n\"\"\"\nThe condition must evaluate to either TRUE or FALSE. If it’s a vector, you’ll\nget a warning message; if it’s an NA, you’ll get an error. Watch out for these\nmessages in your own code:\n\nYou can use || (or) and && (and) to combine multiple logical expressions.\nThese operators are “short-circuiting”: as soon as || sees the first TRUE it\nreturns TRUE without computing anything else. As soon as && sees the first\nFALSE it returns FALSE. You should never use | or & in an if statement: these\nare vectorised operations that apply to multiple values (that’s why you use\nthem in filter()). If you do have a logical vector, you can use any() or all()\nto collapse it to a single value.\n\nBe careful when testing for equality. == is vectorised, which means that it’s\neasy to get more than one output. Either check the length is already 1,\ncollapse with all() or any(), or use the non-vectorised identical().\nidentical() is very strict: it always returns either a single TRUE or a\nsingle FALSE, and doesn’t coerce types. This means that you need to be careful\nwhen comparing integers and doubles:\n\"\"\"\nidentical(0L, 0)\n#> [1] FALSE\n\n#You also need to be wary of floating point numbers:\n\nx <- sqrt(2) ^ 2\nx\n#> [1] 2\nx == 2\n#> [1] FALSE\nx - 2\n#> [1] 4.44e-16\n\n#Instead use dplyr::near() for comparisons, as described in comparisons.\n\n#And remember, x == NA doesn’t do anything useful!\n\n\n\n?switch\n\n\n\n# Arguments ---------------------------------------------------------------\n\n#19.5.1 Choosing names\n\n\"\"\"\nThe names of the arguments are also important. R doesn’t care, but the readers\nof your code (including future-you!) will. Generally you should prefer longer,\nmore descriptive names, but there are a handful of very common, very short\nnames. It’s worth memorising these:\n\nx, y, z: vectors.\nw: a vector of weights.\ndf: a data frame.\ni, j: numeric indices (typically rows and columns).\nn: length, or number of rows.\np: number of columns.\n\nOtherwise, consider matching names of arguments in existing R functions.\nFor example, use na.rm to determine if missing values should be removed.\n\"\"\"\n\n",
+    "created" : 1494792667348.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2487563397",
+    "id" : "E3A3EDD8",
+    "lastKnownWriteTime" : 1494795087,
+    "last_content_update" : 1494795087295,
+    "path" : "~/Documents/Github/r4ds/r4ds_programming.r",
+    "project_path" : "r4ds_programming.r",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
